@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAC-MAN</title>
+    <style>
+        body{
+            background-color: rgb(10, 10, 10);
+            margin: 0px;
+            height: 100vh;
+            display: grid;
+            align-items: center;
+            place-content: center;
+        }
+        #pacman{
+            width: 1px;
+            height: 1px;
+            border-top: 100px solid yellow;
+            border-left: 100px solid yellow;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid yellow;
+            border-radius: 100px;
+            position: relative;
+        }
+
+        #pacman:active{
+            animation-name: animation;
+            animation-duration: 5s;
+        }
+        #eye{
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            position: absolute;
+            top: -60px;
+            right: 0px;
+            border-radius: 100px;
+        }
+
+        @keyframes animation {
+            0%{
+                border-right: 100px solid yellow;
+            }
+            100%{
+                box-shadow: 0px 0px 25px yellow,
+                            0px 0px 50px yellow,
+                            0px 0px 65px yellow,
+                            0px 0px 100px yellow;
+                transition: all cubic-bezier(0.215, 0.610, 0.355, 1) 700ms;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="pacman">
+        <div id="eye"></div>
+    </div>
+</body>
+</html>
